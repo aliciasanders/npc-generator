@@ -128,12 +128,12 @@ class Character {
         }
     }
 
-    public static function loadAllCharacters() {
+    public static function getAllCharacters() {
         session_start();
         $characters = array();
         if ( isset( $_SESSION['characters'] ) ) {
             foreach( $_SESSION['characters'] as $characterID => $characterData ) {
-                $characters['$characterID'] = Character::loadJSON($characterData);
+                $characters['$characterID'] = json_decode($characterData)['name'];
             }
         }
         return $characters;
