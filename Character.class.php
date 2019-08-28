@@ -118,6 +118,10 @@ class Character {
         return new Character($characterData);
     }
 
+    /**
+     * Returns a character object loaded from session data
+     * uses passed id to find character
+     */
     public static function loadCharacter( $id ) {
         session_start();
         if ( isset( $_SESSION['characters'] ) && isset($_SESSION['characters'][$id]) ) {
@@ -128,6 +132,9 @@ class Character {
         }
     }
 
+    /**
+     * Returns an array of all character ids and names
+     */
     public static function getAllCharacters() {
         session_start();
         $characters = array();
