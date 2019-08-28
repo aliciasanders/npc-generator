@@ -128,6 +128,17 @@ class Character {
         }
     }
 
+    public static function loadAllCharacters() {
+        session_start();
+        $characters = array();
+        if ( isset( $_SESSION['characters'] ) ) {
+            foreach( $_SESSION['characters'] as $characterID => $characterData ) {
+                $characters['$characterID'] = Character::loadJSON($characterData);
+            }
+        }
+        return $characters;
+    }
+
     /**
      * Returns a randomly generated character with options from database
      */
