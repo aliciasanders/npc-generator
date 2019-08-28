@@ -2,6 +2,8 @@
 
 class Character {
 
+    private $id;
+
     /* Caracter attributes */
     private $name;
     private $race;
@@ -19,6 +21,8 @@ class Character {
      * Accepts array of character data
      */
     function __construct( $characterData ) {
+        $this->id = isset($characterData['id']) ? $characterData['id'] : uniqid();
+
         $this->setName( isset($characterData['name']) ? $characterData['name'] : null );
         $this->setRace( isset($characterData['race']) ? $characterData['race'] : null );
         $this->setGender( isset($characterData['gender']) ? $characterData['gender'] : null );
@@ -34,6 +38,9 @@ class Character {
      * Getter functions
      * Character attributes will be encoded to json and returned to the front end for display
      */
+    public function getID() {
+        return $this->id;
+    }
     public function getName(){
         return $this->name;
     }
@@ -90,6 +97,16 @@ class Character {
     }
     public function setGoals( $goals ){
         $this->goals = $goals;
+    }
+
+    /**
+     * This function save the character data to the session
+     */
+    public function save() {
+        session_start();
+        $characters = isset($_SESSION('characters')) ? $_SESSION('characters') : array();
+        $characters[$this->id] = json_encode($this);
+        $_SESSION('characters') = $characters;
     }
 
     /** 
