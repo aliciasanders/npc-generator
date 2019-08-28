@@ -11,6 +11,9 @@ class Character {
     private $personality_traits;
     private $goals;
 
+    /* database manager object, allows for access to available character options stored in the database for validation */
+    private $dbManager;
+
     /** 
      * Character constructor
      * Accepts array of character data
@@ -23,6 +26,8 @@ class Character {
         $this->setPhysical_traits( isset($characterData['physical_traits']) ? $characterData['physical_traits'] : null );
         $this->setPersonality_traits( isset($characterData['personality_traits']) ? $characterData['personality_traits'] : null );
         $this->setGoals( isset($characterData['goals']) ? $characterData['goals'] : null );
+
+        $this->dbManager = new DBManager();
     }
     
     /**
@@ -59,10 +64,20 @@ class Character {
         $this->name = $name;
     }
     public function setRace( $race ){
-        $this->race = $race;
+        $raceOptions = $dbManager->getOptions('race');
+        if ( in_array( $race, $raceOptions ) ) {
+            $this->race = $race;
+        } else {
+            throw new InvalidArgumentException('race should be selected from the avalable options');
+        }
     }
     public function setGender( $gender ){
-        $this->gender = $gender;
+        $genderOptions = $dbManager->getOptions('gender');
+        if ( in_array( $gender, $genderOptions ) ) {
+            $this->gender = $gender;
+        } else {
+            throw new InvalidArgumentException('gender should be selected from the avalable options');
+        }
     }
     public function setAge( $age ){
         $this->age = (int) $age;
