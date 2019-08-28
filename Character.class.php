@@ -104,9 +104,9 @@ class Character {
      */
     public function save() {
         session_start();
-        $characters = isset($_SESSION('characters')) ? $_SESSION('characters') : array();
+        $characters = isset($_SESSION['characters'[ ? $_SESSION['characters'] : array();
         $characters[$this->id] = json_encode($this);
-        $_SESSION('characters') = $characters;
+        $_SESSION['characters'] = $characters;
     }
 
     /** 
@@ -116,6 +116,16 @@ class Character {
     public static function loadJSON( $jsonString ) {
         $characterData = json_decode( $jsonString );
         return new Character($characterData);
+    }
+
+    public static function loadCharacter( $id ) {
+        session_start();
+        if ( isset( $_SESSION['characters'] ) && isset($_SESSION['characters'][$id]) ) {
+            return Character::loadJSON($_SESSION['characters'][$id]);
+        }
+        else { 
+            return null;
+        }
     }
 
     /**
