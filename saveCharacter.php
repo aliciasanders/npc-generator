@@ -25,3 +25,5 @@ try {
         "character" => false
     );
 }
+
+echo json_encode($returnArray);
