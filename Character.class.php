@@ -101,6 +101,21 @@ class Character {
         return new Character($characterData);
     }
 
+    /**
+     * Returns a randomly generated character with options from database
+     */
+    public static function randomCharacter() {
+        $attributes = array();
+        $attributes['name'] = $this->dbManager->randomOption('name');
+        $attributes['race'] = $this->dbManager->randomOption('race');
+        $attributes['gender'] = $this->dbManager->randomOption('gender');
+        $attributes['age'] = $this->dbManager->randomOption('age');
+        $attributes['physical_traits'] = $this->dbManager->randomOption('physical_traits');
+        $attributes['personality_traits'] = $this->dbManager->randomOption('personality_traits');
+        $attributes['goals'] = $this->dbManager->randomOption('goals');
+        return new Character($attributes);
+    }
+
 }
 
 ?>

@@ -28,7 +28,7 @@ class DBManager {
      */
     public function getOptions( $attribute ) {
         $options = array();
-        $sql = "SELECT $attribute FROM {$attribute}Options";
+        $sql = "SELECT $attribute FROM {$attribute}Options;";
         $result = $this->conn->query($sql);
         if ($result->num_rows > 0) {
             while( $row = $result->fetch_assoc() ) {
@@ -36,6 +36,20 @@ class DBManager {
             }
         }
         return $options;
+    }
+
+    /**
+     * This function gets a random option from the table of attribute options
+     */
+    public function randomOption( $attribute ) {
+        $sql = "SELECT $attribute FROM {$attribute}Options ORDER BY RAND() LIMIT 1;";
+        $result = $this->conn->query($sql);
+        if ($result->num_rows > 0) {
+            while( $row = $result->fetch_assoc() ) {
+                $option = $row["$attribute"] );
+            }
+        }
+        return $option;
     }
 
 }
