@@ -104,7 +104,7 @@ class Character {
      */
     public function save() {
         session_start();
-        $characters = isset($_SESSION['characters'[ ? $_SESSION['characters'] : array();
+        $characters = isset($_SESSION['characters']) ? $_SESSION['characters'] : array();
         $characters[$this->id] = json_encode($this);
         $_SESSION['characters'] = $characters;
     }
@@ -150,7 +150,7 @@ class Character {
      * Returns a randomly generated character with options from database
      */
     public static function randomCharacter() {
-        $dbManager = new DBManager()
+        $dbManager = new DBManager();
         $attributes = array();
         $attributes['name'] = $dbManager->randomOption('name');
         $attributes['race'] = $dbManager->randomOption('race');

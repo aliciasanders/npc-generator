@@ -32,7 +32,7 @@ class DBManager {
         $result = $this->conn->query($sql);
         if ($result->num_rows > 0) {
             while( $row = $result->fetch_assoc() ) {
-                $options[$row["id"]] = $row["value"] );
+                $options[$row["id"]] = $row["value"];
             }
         }
         return $options;
@@ -46,7 +46,7 @@ class DBManager {
         $result = $this->conn->query($sql);
         if ($result->num_rows > 0) {
             while( $row = $result->fetch_assoc() ) {
-                $option = $row["value"] );
+                $option = $row["value"];
             }
         }
         return $option;
