@@ -24,7 +24,7 @@ class CharacterGenerator {
     public function characterSelector() {
         $characters = Character::getAllCharacters(); ?>
 
-        <select>
+        <select name="characterSelect" id="characterSelectField">
         <?php foreach ($characters as $id => $character) : ?>
             <option value="<?php echo $id; ?>"><?php echo $character; ?></option>
         <?php endforeach; ?>
