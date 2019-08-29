@@ -18,8 +18,8 @@ $characterGenerator = new CharacterGenerator();
         <div class="generator-header">
             <?php $characterGenerator->characterSelector(); ?>
             <?php $characterGenerator->newCharacterButton(); ?>
-            <?php $characterGenerator->SaveCharacterButton(); ?>
-        </div>
+            <?php $characterGenerator->saveCharacterButton(); ?>
+        </div> <!-- end header -->
 
         <!-- Contains all character atributes -->
         <div class="character-info-container">
@@ -30,22 +30,22 @@ $characterGenerator = new CharacterGenerator();
                 <?php $characterGenerator->characterRaceField(); ?>
                 <?php $characterGenerator->characterAgeField(); ?>
                 <?php $characterGenerator->characterGenderField(); ?>
-            </div>
+            </div> <!-- end basic info -->
 
             <!-- Contains physical and personality traits -->
             <div class="traits">
                 <?php $characterGenerator->characterPhysicalTraitsField(); ?>
                 <?php $characterGenerator->characterPersonalityTraitsField(); ?>
-            </div>
+            </div> <!-- end traits -->
 
             <!-- Contains personal goals -->
             <div class="goals">
                 <?php $characterGenerator->characterGoalsField(); ?>
-            </div>
+            </div> <!-- end goals -->
 
-        </div>
+        </div> <!-- end info container -->
         
-    </div>
+    </div> <!-- end wrapper -->
 
 </body> 
 </html>
