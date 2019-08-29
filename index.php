@@ -1,8 +1,8 @@
 <?php
-require_once(config.php);
-require_once(Character.class.php);
-require_once(DBManager.class.php);
-require_once(CharacterGenerator.class.php);
+require_once('config.php');
+require_once('Character.class.php');
+require_once('DBManager.class.php');
+require_once('CharacterGenerator.class.php');
 
 $characterGenerator = new CharacterGenerator();
 ?>

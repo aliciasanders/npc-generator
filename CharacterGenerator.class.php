@@ -1,7 +1,7 @@
 <?php
 
-require_once(Character.class.php);
-require_once(DBManager.class.php);
+require_once('Character.class.php');
+require_once('DBManager.class.php');
 
 class CharacterGenerator {
 
