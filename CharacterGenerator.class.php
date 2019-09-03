@@ -38,7 +38,7 @@ class CharacterGenerator {
     <?php }
 
     public function saveCharacterButton() { ?>
-        <button class="newCharacter">New</button>
+        <button class="saveCharacter">Save</button>
     <?php }
 
     public function characterNameField() { ?>
