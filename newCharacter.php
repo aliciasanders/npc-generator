@@ -9,10 +9,10 @@ try {
     $returnArray = array(
         "success" => true,
         "error" => false,
-        "character" => json_encode($character)
+        "character" => $character->getJSON()
     );
 } catch (Exception $e) {
-    $returnArray array(
+    $returnArray = array(
         "success" => false,
         "error" => "There was an error creating your character, please try again later.",
         "character" => false

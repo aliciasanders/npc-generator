@@ -12,7 +12,7 @@ try {
         "characters" => json_encode($characters)
     );
 } catch (Exception $e) {
-    $returnArray array(
+    $returnArray = array(
         "success" => false,
         "error" => "There was an error loading your characters, please try again later.",
         "character" => false

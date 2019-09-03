@@ -10,16 +10,16 @@ try {
     $returnArray = array(
         "success" => true,
         "error" => false,
-        "character" => json_encode($character)
+        "character" => $character->getJSON()
     );
 } catch (InvalidArgumentException $e) {
-    $returnArray array(
+    $returnArray = array(
         "success" => false,
         "error" => $e->getMessage(),
         "character" => false
     );
 } catch (Exception $e) {
-    $returnArray array(
+    $returnArray = array(
         "success" => false,
         "error" => "There was an error saving your character, please try again later.",
         "character" => false
