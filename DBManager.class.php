@@ -1,5 +1,7 @@
 <?php
 
+require_once('config.php');
+
 class DBManager {
 
     /* Use database connection infornation from config.php file included in index.php */
