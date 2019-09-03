@@ -1,5 +1,4 @@
 <?php
-require_once('config.php');
 require_once('Character.class.php');
 require_once('DBManager.class.php');
 require_once('CharacterGenerator.class.php');
@@ -10,6 +9,8 @@ $characterGenerator = new CharacterGenerator();
 <html> 
 <head> 
     <title>NPC Generator</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="/scripts.js"></script>
 </head> 
 <body> 
 
