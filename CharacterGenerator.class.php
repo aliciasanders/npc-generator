@@ -78,18 +78,24 @@ class CharacterGenerator {
     <?php }
 
     public function characterPhysicalTraitsField() { ?>
-        <label for="physicalTraits">Physical Traits</label>
-        <textarea rows="6" cols="50" name="physicalTraits" id="physicalTraitsField"></textarea>
+        <div class="physicalTraitsContainer">
+            <label for="physicalTraits">Physical Traits</label><br />
+            <textarea rows="6" cols="50" name="physicalTraits" id="physicalTraitsField"></textarea>
+        </div>
     <?php }
 
     public function characterPersonalityTraitsField() { ?>
-        <label for="PersonalityTraits">Personality Traits</label>
-        <textarea rows="6" cols="50" name="PersonalityTraits" id="personalityTraitsField"></textarea>
+        <div class="personalityTraitsContainer">
+            <label for="PersonalityTraits">Personality Traits</label><br />
+            <textarea rows="6" cols="50" name="PersonalityTraits" id="personalityTraitsField"></textarea>
+        </div>
     <?php }
 
     public function characterGoalsField() { ?>
-        <label for="goals">Goals</label>
-        <textarea rows="6" cols="100" name="goals" id="goalsField"></textarea>
+        <div class="goalsContainer">
+            <label for="goals">Goals</label>
+            <textarea rows="6" cols="100" name="goals" id="goalsField"></textarea>
+        </div>
     <?php }
 
 }
