@@ -19,6 +19,7 @@ $(document).ready(function() {
     $('.loadCharacter').click( loadCharacter );
     $('.newCharacter').click( newCharacter );
     $('.saveCharacter').click( saveCharacter );
+    $('.deleteCharacter').click( deleteCharacter );
 
 });
 
@@ -98,6 +99,34 @@ function saveCharacter () {
         } else {
         }
     });
+
+}
+
+function deleteCharacter () {
+
+    var ID = $('#characterSelectField').val();
+    if ( ID !== '0' ) {  // if there is a character currently selected
+
+        // Delete the selected character and either load the default or generate a new one.
+        $.post( '/deleteCharacter.php',
+        {characterID: ID},
+        function( dataString ) {
+            var data = JSON.parse(dataString);
+            if (data.success) {
+                $('#characterSelectField option[value="'+ID+'"]').remove(); // Remove the character from the select list
+                if ($('#characterSelectField option').length > 1) { // If there is another character, select it and load it
+                    var nextChar = $('#characterSelectField option:nth-child(2)').val();
+                    $('#characterSelectField').val(nextChar);
+                    loadCharacter();
+                } else { // Otherwise generate a new character
+                    newCharacter();
+                }
+            } else {
+            }
+        });
+
+    }
+
 
 }
 

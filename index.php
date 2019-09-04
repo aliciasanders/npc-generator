@@ -16,11 +16,12 @@ $characterGenerator = new CharacterGenerator();
 
     <div class="content-wrapper">
 
-        <!-- Contains character selector, generate new character button, and save button -->
+        <!-- Contains character selector, generate new character button, save button, and delete button -->
         <div class="generator-header">
             <?php $characterGenerator->characterSelector(); ?>
             <?php $characterGenerator->newCharacterButton(); ?>
             <?php $characterGenerator->saveCharacterButton(); ?>
+            <?php $characterGenerator->deleteCharacterButton(); ?>
         </div> <!-- end header -->
 
         <!-- Contains all character atributes -->

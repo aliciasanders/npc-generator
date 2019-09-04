@@ -122,10 +122,25 @@ class Character {
      * This function save the character data to the session
      */
     public function save() {
-        session_start();
+        if ( "" === session_id() ) {
+            session_start();
+        }
         $characters = isset($_SESSION['characters']) ? $_SESSION['characters'] : array();
         $characters[$this->id] = $this->getJSON();
         $_SESSION['characters'] = $characters;
+    }
+
+    /**
+     * This function save the character data to the session
+     */
+    public function delete() {
+        if ( "" === session_id() ) {
+            session_start();
+        }
+        $characters = isset($_SESSION['characters']) ? $_SESSION['characters'] : array();
+        if (isset($characters[$this->id])) {
+            unset($characters[$this->id]);
+        }
     }
 
     /** 
@@ -142,7 +157,9 @@ class Character {
      * uses passed id to find character
      */
     public static function loadCharacter( $id ) {
-        session_start();
+        if ( "" === session_id() ) {
+            session_start();
+        }
         if ( isset( $_SESSION['characters'] ) && isset($_SESSION['characters'][$id]) ) {
             return Character::loadJSON($_SESSION['characters'][$id]);
         }
@@ -155,7 +172,9 @@ class Character {
      * Returns an array of all character ids and names
      */
     public static function getAllCharacters() {
-        session_start();
+        if ( "" === session_id() ) {
+            session_start();
+        }
         $characters = array();
         if ( isset( $_SESSION['characters'] ) ) {
             foreach( $_SESSION['characters'] as $characterID => $characterData ) {

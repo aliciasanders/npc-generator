@@ -41,6 +41,10 @@ class CharacterGenerator {
         <button class="saveCharacter">Save</button>
     <?php }
 
+    public function deleteCharacterButton() { ?>
+        <button class="deleteCharacter">Delete</button>
+    <?php }
+
     public function characterNameField() { ?>
         <label for="name">Name</label>
         <input type="text" name="name" id="nameField">
