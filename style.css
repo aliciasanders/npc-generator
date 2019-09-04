@@ -1,0 +1,77 @@
+/**
+ * General Layout
+ * Center and contain content
+ */
+.content-wrapper {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+div {
+    box-sizing: border-box;
+}
+
+/* Header */
+.generator-header {
+    padding: 20px;
+    background-color: #bbb;
+    margin-bottom: 20px;
+}
+
+/**
+ * Content
+ */
+
+.basic-info {
+    padding: 10px;
+}
+
+/* Traits row */
+.traits {
+    padding: 10px;
+}
+.physicalTraitsContainer, .personalityTraitsContainer {
+    display: inline-block;
+    width: 49.5%;
+    padding: 10px;
+}
+.physicalTraitsContainer label, .personalityTraitsContainer label {
+    float: left;
+}
+.physicalTraitsContainer textarea, .personalityTraitsContainer textarea {
+    width: 100%;
+}
+
+/* Goals row */
+.goals {
+    padding: 10px;
+}
+.goalsContainer {
+    width: 99.5%;
+    padding: 10px;
+}
+.goalsContainer label {
+    float: left;
+}
+.goalsContainer textarea {
+    width: 100%;
+}
+
+/* General field styling */
+input {
+    height: 30px;
+    padding: 0px 5px;
+}
+textarea {
+    padding: 5px;
+}
+select {
+    height: 30px;
+    padding: 0px 5px;
+    border-radius: 0px;
+}
+button {
+    height: 30px;
+    padding: 0px 10px;
+    border-radius: 0px;
+}

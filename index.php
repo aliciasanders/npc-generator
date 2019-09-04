@@ -11,6 +11,7 @@ $characterGenerator = new CharacterGenerator();
     <title>NPC Generator</title>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="/scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css"></link>
 </head> 
 <body> 
 
