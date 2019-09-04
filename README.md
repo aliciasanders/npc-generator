@@ -22,6 +22,12 @@ Create a new database called 'character_options'
 CREATE DATABASE character_options;
 ```
 
+Import the character_options.sql file to your character_options database to load some example content.
+
+```
+mysql db_name < backup-file.sql
+```
+
 Copy the config-example.php file to config.php and add your own database connection and user information
 
 Access http://localhost/ and experiment with generating, editing, saving, loading, and deleting characters.
